@@ -33,9 +33,11 @@ if args.mode in ['f', 'file']:
     if result:
         if args.out:
             save_f = open(args.out, 'w', encoding='utf-8')
-            save_f.write(str(result))
+            save_f.write("\n".join([str(x) for x in result]))
         else:
             print(f'Result:\n{result}')
+    else:
+        print('No result.')
 else:  # dir
     if args.out and not os.path.exists(args.out):
         os.makedirs(args.out)
@@ -52,3 +54,5 @@ else:  # dir
                 save_f.write("\n".join(result))
             else:
                 print(f'File {filename}. Result:\n{result}\n##########')
+        else:
+            print('No result')
