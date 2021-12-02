@@ -23,7 +23,7 @@ def abstract(text: str):
     for i in range(tf_idf.shape[0]):
         doc_tfidf = [val for val in tf_idf[i, :].toarray()[0] if val != 0]
         avg = sum(doc_tfidf) / len(doc_tfidf)
-        if avg >= threshold * 0.1:
+        if avg >= threshold * 0.11:
             summary.append(documents[i])
 
-    return summary
+    return "\n".join(summary)

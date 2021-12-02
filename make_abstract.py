@@ -31,7 +31,7 @@ if args.mode in ['f', 'file']:
         if result:
             if args.out:
                 with open(args.out, 'w', encoding='utf-8') as save_f:
-                    save_f.write("\n".join([str(x) for x in result]))
+                    save_f.write(result)
             else:
                 print(f'Result:\n{result}')
         else:
@@ -46,7 +46,7 @@ elif args.mode in ['d', 'dir']:
             if result:
                 if args.out:
                     with open(f'{args.out}/{filename}', 'w', encoding='utf-8') as save_f:
-                        save_f.write("\n".join([str(x) for x in result]))
+                        save_f.write(result)
                 else:
                     print(f'File {filename}. Result:\n{result}\n##########')
             else:
